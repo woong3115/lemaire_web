@@ -1,0 +1,506 @@
+@charset "utf-8";
+/* 배너,헤더 */
+.banner{
+    height: 100vh;
+    background-color: rgb(83, 83, 83);
+}
+.header-area{
+    height: 200px;
+    padding: 50px;
+    box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+
+    transition: 0.5s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-area.active{
+    height: 100px;
+    background-color: #fff;
+    padding: 30px;
+}
+.header-logo{
+    width: 680px;
+    height: 100%;
+    transition: 0.5s;
+}
+.header-logo.active{
+    width: 270px;
+}
+.header-logo svg{
+    transition: 0.3s;
+}
+.header-logo svg:hover{
+    fill: #f98011;
+}
+
+/* 메뉴버튼 */
+.menu-btn{
+    width: 40px;
+    height: 25px;
+    position: relative;
+    z-index: 999;
+    display: inline-block;
+    transition: 0.5s;
+}
+.menu-btn.active{
+    transform: rotate(30deg);
+    width: 30px;
+    height: 20px;
+}
+.menu-btn span{
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    transition: 0.5s;
+}
+.menu-btn span.on{
+    background-color: #000;
+}
+.menu-btn span:nth-child(2){
+    top: 50%;
+}
+.menu-btn span:nth-child(3){
+    top: 100%;
+}
+.menu-btn span:nth-child(1).active{
+    width: 50%;
+}
+.menu-btn span:nth-child(2).active{
+    width: 75%;
+}
+
+/* 클릭 시 열리는 메뉴박스 */
+.menu-bar-box{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    z-index: -1;
+    transition: 0.3s;
+}
+.menu-bar-box.active{
+    opacity: 1;
+    z-index: 99;
+}
+
+.menu-bar{
+    position: absolute;
+    width: 100%;
+    height: 175px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+.menu-bar .menu{
+    font-size: 4.375rem;
+    color: #fff;
+    margin-right: 3.75rem;
+    transition: 0.3s;
+}
+.menu-bar .menu:hover{
+    color: #f98011;
+}
+
+/* 슬라이더 - 스와이퍼 */
+.slider-wrap{
+    width: 100%;
+    height: 100%;
+}
+.slider-wrap .auto-slider{
+    width: 400%;
+    height: 100%;
+    display: flex;
+}
+.slider-wrap .slider{
+    width: 25%;
+    height: 100%;
+}
+.slider-wrap .slider-1{
+    background: url(../img/banner_0.jpg) no-repeat center top;
+    background-size: cover;
+}
+.slider-wrap .slider-2{
+    background: url(../img/banner_1.jpg) no-repeat center -110px;
+    background-size: cover;
+}
+.slider-wrap .slider-3{
+    background: url(../img/banner_2.jpg) no-repeat center top;
+    background-size: cover;
+}
+.slider-wrap .slider-4{
+    background: url(../img/banner_3.jpg) no-repeat center top;
+    background-size: cover;
+}
+
+/* 스와이퍼 버튼 커스텀 - 안보이게 처리 */
+.swiper-button-next,.swiper-button-prev{
+    opacity: 0;
+}
+
+/* sec-1 */
+/* 공통스타일 */
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0 150px;
+    box-sizing: border-box;
+}
+.section-head-box .section-head{
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 45px;
+    color: #222;
+    cursor: pointer;
+}
+.sec-1 .section-head-box{
+    display: flex;
+    justify-content: space-between;
+}
+/* 늘어나는 화살표 */
+.sec-1 .arror-r{
+    width: 300px;
+    height: 40px;
+    background: url(../img/arrow-short.svg) no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.sec-1 .arror-r:hover{
+    width: 300px;
+    height: 40px;
+    background: url(../img/arrow-long.svg) no-repeat;
+    background-size: contain;
+}
+
+/* 애니메이션 슬라이더 박스 -> 계속 굴러가는 슬라이더 구현 */
+.sec-1 .animate-slider-wrap{
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+.sec-1 .animate-slider{
+    width: 2460px;
+    display: flex;
+    margin-left: 15px;
+    animation: slider 50s linear infinite;
+}
+@keyframes slider {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+.sec-1 .animate-slider a{
+    display: inline-block;
+}
+.sec-1 .content{
+    width: 395px;
+    height: 550px;
+    margin-right: 15px;
+    background-color: #222;
+    border: 1px solid #dbdbdb;
+}
+.sec-1 .content.con-1{
+    background: url(../img/slider_0.jpg) no-repeat;
+    background-size: cover;
+    transition: 0.3s;
+}
+.sec-1 .content.con-2{
+    background: url(../img/slider_1.jpg) no-repeat;
+    background-size: cover;
+    transition: 0.3s;
+}
+.sec-1 .content.con-3{
+    background: url(../img/slider_2.jpg) no-repeat;
+    background-size: cover;
+    transition: 0.3s;
+}
+.sec-1 .content.con-4{
+    background: url(../img/slider_3.jpg) no-repeat;
+    background-size: cover;
+    transition: 0.3s;
+}
+.sec-1 .content.con-5{
+    background: url(../img/slider_4.jpg) no-repeat;
+    background-size: cover;
+    transition: 0.3s;
+}
+.sec-1 .content.con-6{
+    background: url(../img/slider_5.jpg) no-repeat;
+    background-size: cover;
+    transition: 0.3s;
+}
+/* hover하면 이미지 바뀌는 영역 */
+.sec-1 .content.con-1:hover{
+    background: url(../img/slider_hover_0.jpg) no-repeat;
+    background-size: cover;
+}
+.sec-1 .content.con-2:hover{
+    background: url(../img/slider_hover_1.jpg) no-repeat;
+    background-size: cover;
+}
+.sec-1 .content.con-3:hover{
+    background: url(../img/slider_hover_2.jpg) no-repeat;
+    background-size: cover;
+}
+.sec-1 .content.con-4:hover{
+    background: url(../img/slider_hover_3.jpg) no-repeat;
+    background-size: cover;
+}
+.sec-1 .content.con-5:hover{
+    background: url(../img/slider_hover_4.jpg) no-repeat;
+    background-size: cover;
+}
+.sec-1 .content.con-6:hover{
+    background: url(../img/slider_hover_5.jpg) no-repeat;
+    background-size: cover;
+}
+
+/* sec-2 */
+.sec-2 .about{
+    display: flex;
+    margin-right: -20px;
+}
+.sec-2 .left,
+.sec-2 .right{
+    margin-right: 20px;
+    width: calc(50% - 20px);
+}
+.sec-2 .store{
+    background: url(../img/about.jpg) no-repeat;
+    background-size: cover;
+    padding-bottom: 66.666%;
+    margin-bottom: 15px;
+}
+.sec-2 .right p{
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.sec-2 .right span{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* sec-3 */
+.sec-3 .insta-container{
+    width: 935px;
+    margin: 0 auto;
+}
+.sec-3 .profile{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(
+        24deg,
+        rgba(131,58,180,1) 0%,
+        rgba(253,29,29,1) 49%,
+        rgba(252,176,69,1) 100%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:  0 auto;
+    margin-bottom: 10px;
+}
+.sec-3 .profile a{
+    width: 172px;
+    height: 172px;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.sec-3 .profile-link{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.sec-3 .profile-link a{
+    font-size: 1.75rem;
+    font-weight: 300;
+    color: #252525;
+}
+.sec-3 .profile-btn{
+    cursor: pointer;
+    padding: 5px 9px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    box-sizing: border-box;
+    background-color: #0095f6;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    margin-left: 5px;
+    color: #fff;
+}
+.sec-3 .highlight{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 35px;
+    box-sizing: border-box;
+    margin-bottom: 70px;
+    border-bottom: 1px solid #c4c4c4;
+}
+.sec-3 .highlight .con-box{
+    width: 90px;
+}
+.sec-3 .highlight .con{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 1px solid #c4c4c4;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sec-3 .highlight .con img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.sec-3 .highlight .con-box .txt{
+    font-weight: 500;
+    text-align: center;
+    color: #252525;
+    font-size: 0.937rem;
+    margin-top: 10px;
+    width: inherit;
+
+    /* 넘치는 텍스트 점처리 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.sec-3 .feed{
+    display: flex;
+    flex-wrap: wrap;
+}
+.sec-3 .feed .con-box{
+    width: 33.333%;
+    height: 0;
+    padding-bottom: 33.333%;
+    cursor: pointer;
+    position: relative;
+}
+/* 비율값으로 지정해주면 반응형에서 조절하기 편하기 때문에 이미지는 없애줌 */
+.sec-3 .feed .feed-con img{
+    display: none;
+}
+.sec-3 .feed .con-box.feed1{
+    background: url(../img/insta-feed1.jpg) no-repeat center;
+    background-size: cover;
+}
+.sec-3 .feed .con-box.feed2{
+    background: url(../img/insta-feed2.jpg) no-repeat center top;
+    background-size: cover;
+}
+.sec-3 .feed .con-box.feed3{
+    background: url(../img/insta-feed3.jpg) no-repeat center top;
+    background-size: cover;
+}
+.sec-3 .feed .con-box.feed4{
+    background: url(../img/insta-feed4.jpg) no-repeat center top;
+    background-size: cover;
+}
+.sec-3 .feed .con-box.feed5{
+    background: url(../img/insta-feed5.jpg) no-repeat center top;
+    background-size: cover;
+}
+.sec-3 .feed .con-box.feed6{
+    background: url(../img/insta-feed6.jpg) no-repeat center top;
+    background-size: cover;
+}
+.sec-3 .feed .con-box.feed7{
+    background: url(../img/insta-feed7.jpg) no-repeat center top;
+    background-size: cover;
+}
+.sec-3 .feed .con-box.feed8{
+    background: url(../img/insta-feed8.jpg) no-repeat center top;
+    background-size: cover;
+}
+.sec-3 .feed .con-box.feed9{
+    background: url(../img/insta-feed9.jpg) no-repeat center top;
+    background-size: cover;
+}
+.sec-3 .feed .con-box.feed10{
+    background: url(../img/insta-feed10.jpg) no-repeat center;
+    background-size: cover;
+}
+.sec-3 .feed .con-box.feed11{
+    background: url(../img/insta-feed11.jpg) no-repeat center top;
+    background-size: cover;
+}
+.sec-3 .feed .con-box.feed12{
+    background: url(../img/insta-feed12.jpg) no-repeat center;
+    background-size: cover;
+} 
+
+.sec-3 .con-back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+.sec-3 .feed .con-box:hover .con-back{
+    opacity: 1;
+}
+.sec-3 .con-back p{
+    color: #fff;
+}
+.sec-3 .like-box{
+    display: flex;
+    align-items: center;
+}
+.sec-3 .icon{
+    width: 25px;
+    height: 25px;
+}
+.sec-3 .icon.like{
+    background: url(../img/heart_bold.svg) no-repeat;
+    background-size: cover;
+}
+.sec-3 .icon.comment{
+    background: url(../img/comment_bold.svg) no-repeat;
+    background-size: cover;
+    margin-left: 20px;
+}
+
+footer{
+    padding: 0 170px;
+    background-color: #222;
+}
+.f-box{
+    display: flex;
+}
+.f-box li{
+    padding: 50px 0;
+    margin-right: 30px;
+}
+.f-box a{
+    color: #fff;
+    font-size: 2rem;
+}

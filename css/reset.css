@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+@import url(https://cdn.jsdelivr.net/npm/fullpage.js@2.9.4/dist/jquery.fullpage.min.js);
+
+@font-face {
+    font-family: "silk-serif";
+    src: url(../fonts/silk-serif/Silk-Serif-Black.otf);
+    src: url(../fonts/silk-serif/Silk-Serif-Bold.otf);
+    src: url(../fonts/silk-serif/Silk-Serif-SemiBold.otf);
+    font-weight: 700;
+}
+@font-face {
+    font-family: "silk-serif";
+    src: url(../fonts/silk-serif/Silk-Serif-Light.otf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: "silk-serif";
+    src: url(../fonts/silk-serif/Silk-Serif-Medium.otf);
+    src: url(../fonts/silk-serif/Silk-Serif-Regular.otf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "BrownStd-Regular";
+    src: url(../fonts/BrownStd/BrownStd-Regular/BrownStd-Regular.ttf);
+}
+@font-face {
+    font-family: "Pretendard";
+    src: url(../fonts/Pretendard/Pretendard-Light.otf);
+    src: url(../fonts/Pretendard/Pretendard-Thin.otf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Pretendard";
+    src: url(../fonts/Pretendard/Pretendard-Bold.otf);
+    src: url(../fonts/Pretendard/Pretendard-SemiBold.otf);
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Pretendard";
+    src: url(../fonts/Pretendard/Pretendard-Regular.ttf);
+    src: url(../fonts/Pretendard/Pretendard-Medium.otf);
+    font-weight: 400;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+ol,ul,li{
+    list-style: none;
+}
+img,svg,video,iframe{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+html,body{
+    font-family: "BrownStd-Regular";
+    /* 많이 들어가는 폰트를 전체적으로 설정해주는 것이 좋음 */
+    font-size: 100%;
+    /* overflow-x: hidden; */
+}
+
+
+
+
+

@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    font-size: 100%;
+
+    /* overflow-x: hidden; */
+    /* 가로스크롤 막아주는 속성(설정다하고 마지막에 설정) -> 오류나는 경우 있음 */
+    /* 모바일 확인 시 가로스크롤 막아주지 않을 경우 옆으로 밀림 현상 발생 */
+
+    /* position: sticky; 사용시 overflow-x: hidden;처리할 경우 활성화 되지 않음 */
+    /* body{
+        max-width: 100%;
+        height: auto;
+        overflow-x: hidden;
+    } */
+}
+ol,ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #222;
+}
+img,svg,video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
